@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Poster Maker AI</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- Navbar -->
+    <header>
+      <nav>
+        <a href="#" class="flex logo">
+          <img
+            class="logoIcon"
+            src="./img/logo.svg"
+            alt="Poster Maker AI"
+          />Unilogos
+        </a>
+        <ul class="navLinks flex">
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Login</a></li>
+          <li><a href="#">SignUp</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- Generator Form + Preview -->
+    <main>
+      <section class="generator">
+        <h1>Poster Maker AI</h1>
+        <p>Generate posters or logos for your events with AI</p>
+
+        <form id="genForm" class="form">
+          <div class="row">
+            <label>
+              Type
+              <select name="generationType" required>
+                <option value="poster" selected>Poster</option>
+                <option value="logo">Logo</option>
+              </select>
+            </label>
+            <label>
+              Event name
+              <input type="text" name="eventName" placeholder="Agentic AI" required />
+            </label>
+          </div>
+
+          <div class="row">
+            <label>
+              Theme
+              <input type="text" name="theme" placeholder="Futuristic, neon, tech" />
+            </label>
+            <label>
+              Date
+              <input type="date" name="date" class="date-input"/>
+            </label>
+          </div>
+
+          <div class="row">
+            <label>
+              Event type
+              <select name="eventType">
+                <option value="tech" selected>Tech</option>
+                <option value="cultural">Cultural</option>
+                <option value="academic">Academic</option>
+                <option value="sports">Sports</option>
+                <option value="music">Music</option>
+              </select>
+            </label>
+            <label>
+              Aspect Ratio
+              <select name="aspect_ratio">
+                <option value="3:2" selected>3:2 (Poster)</option>
+                <option value="1:1">1:1 (Logo)</option>
+                <option value="4:5">4:5</option>
+                <option value="16:9">16:9</option>
+              </select>
+            </label>
+          </div>
+
+          <label class="full">
+            Additional prompt (optional)
+            <textarea name="extraPrompt" rows="4" placeholder="Add specific text or styles you want in the design"></textarea>
+          </label>
+
+          <div class="actions">
+            <button id="generateBtn" type="submit">Generate</button>
+            <span id="status" class="status"></span>
+          </div>
+        </form>
+
+        <div class="preview">
+          <h2>Preview</h2>
+          <div class="previewFrame">
+            <img id="previewImg" alt="Generated" />
+          </div>
+          <a id="downloadLink" class="download" href="#" target="_blank" rel="noopener">Open Image</a>
+          <button id="downloadBtn" type="button" class="download" style="margin-left: 0.5rem;">Download</button>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="flex">
+      <p>&copy; 2025 Unilogos. All rights reserved.</p>
+    </footer>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
